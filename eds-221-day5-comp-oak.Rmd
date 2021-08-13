@@ -1,0 +1,21 @@
+---
+title: "Cork Oak Growth"
+author: "Connor Flynn"
+date: "8/13/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(here)
+
+source(here("src", "cork_oak_growth.R"))
+```
+
+```{r}
+height_t2()
+```
+The height of this cork oak at age 12 is expected to be `r height_t2 ....`
+
+
+
