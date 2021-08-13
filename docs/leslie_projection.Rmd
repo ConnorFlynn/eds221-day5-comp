@@ -43,16 +43,20 @@ Add line-by-line comments wheres prompted in the code below, explaining what eac
 # ------ WHAT HAPPENS HERE? ------ #
 # ------ comment line-by-line ---- #
 
-# The line below...
+# The line below creates a vector that is a sequence of 9 years
 time_yr <- seq(from = 0, to = 8, by = 1)
 
-# The line below...
+# The line below creates an empty matrix describing the number of columns as the length
+# of the vector fish_year0
 proj_year <- matrix(ncol = length(fish_year0), nrow = length(time_yr))
 
-# The line below...
+# The line below filters to return every column for the first row based on the
+# initial conditions and populates it
 proj_year[1, ] <- fish_year0
 
-# The for loop below...
+# The for loop below begins with the second row since we just filtered for the 
+# first row above. %*% = the dot product. 2 because we already populated our
+# first row with initial conditions
 for (i in 2:length(time_yr)) {
   proj_year[i,] <- fish_leslie %*% proj_year[i-1,]
 }
